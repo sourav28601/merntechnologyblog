@@ -12,7 +12,7 @@ app.use(session({
   cookie: { secure: false }
 }));
 app.use(flash())
-const port = 3000
+const port = process.env || 3000
 
 const web = require('./routes/web.js')   // ROUTER LINK
 
