@@ -1,0 +1,61 @@
+<%- include('../../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/createblog">Create Blogs</a></li>
+                            <li><a href="/admin/displayblog">Blogs Display</a></li>
+                            <li><a href="/admin/createcategory">Create Category</a></li>
+                            <li><a href="/admin/categorydisplay"> Category Display</a></li>
+                            <li><a href="/admin/contactdisplay">Contact</a></li>
+                            <li><a href="/about"> About</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1 class="text-success">CONTACT DETAILS</h1>
+                            </div>
+                        </div>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>SNo</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <!-- <th>Phone</th>
+                                <th>Message</th> -->
+                                <th>Action</th>
+                            </tr>
+                            <% var i=1 %>
+                            <% data.forEach((item)=>{ %>    <!-- FOR EACH LOOP -->
+                                <!-- console.log(item) -->
+                                <tr>
+                                    <td><%= i++ %></td>
+                                    <td><%= item.name %></td>
+                                    <td><%= item.email %></td>
+                                    <!-- <td><%= item.phone %></td>
+                                    <td><%= item.message %></td> -->
+                                    <td>
+                                        <a href="/admin/viewcontact/<%=item._id%>" class="btn btn-info">VIEW</a>
+                                        <a href="/admin/editcontact/<%=item._id%>"  class="btn btn-success">EDIT</a>
+                                        <a href="/admin/deletecontact/<%=item._id%>" class="btn btn-danger">DELETE</a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../footer.ejs') %>
