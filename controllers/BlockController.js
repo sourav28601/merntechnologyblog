@@ -32,8 +32,7 @@ class BlockController{
         }catch(err){
             console.log(err)
         }     
- 
-     }
+    }
     static about = (req,res) =>{
         res.render('about')
     }

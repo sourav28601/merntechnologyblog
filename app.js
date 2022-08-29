@@ -1,7 +1,9 @@
 const express = require('express');
-// const { connect } = require('mongoose');
 const connectDB = require('./database/connectdb.js');
+const cookieParser = require('cookie-parser')
+
 const app = express()  // FUNCTION CREATE
+app.use(cookieParser())
 // to show message
 var session = require('express-session')
 var flash = require('connect-flash');

@@ -8,6 +8,7 @@ const CategoryController = require('../controllers/admin/CategoryController')
 const CurdController = require('../controllers/CurdController')
 const ContactController = require('../controllers/admin/ContactController')
 const UserController = require('../controllers/user/UserController')
+const auth = require('../middleware/auth')
 const router = express.Router()    // METHOD CREATE 
 
 //about middleware
@@ -28,34 +29,34 @@ router.get('/detail/:id',BlockController.detail)
 router.get('/detail/display',BlockController.DisplayCategory) 
 
 // ADMIN CONTROLLER ROUTE
-router.get('/admin/dashboard',AdminController.dashboard)
+router.get('/admin/dashboard',auth,AdminController.dashboard)
 
 //admin BlogController
-router.get('/admin/createblog',BlogController.createblog)
+router.get('/admin/createblog',auth,BlogController.createblog)
 router.post('/bloginsert',image_middleware,BlogController.bloginsert)
-router.get('/admin/displayblog',BlogController.displayblog)
-router.get('/admin/viewblog/:id',BlogController.viewblog)
-router.get('/admin/editblog/:id',BlogController.editblog)
-router.post('/admin/blogupdate/:id',image_middleware,BlogController.Updateblog)
-router.get('/admin/deleteblog/:id',BlogController.deleteblog)
+router.get('/admin/displayblog',auth,BlogController.displayblog)
+router.get('/admin/viewblog/:id',auth,BlogController.viewblog)
+router.get('/admin/editblog/:id',auth,BlogController.editblog)
+router.post('/admin/blogupdate/:id',auth,image_middleware,BlogController.Updateblog)
+router.get('/admin/deleteblog/:id',auth,BlogController.deleteblog)
 
 
 //admin CategoryController
-router.get('/admin/createcategory',CategoryController.createcategory)
-router.get('/admin/categorydisplay',CategoryController.categorydisplay)
+router.get('/admin/createcategory',auth,CategoryController.createcategory)
+router.get('/admin/categorydisplay',auth,CategoryController.categorydisplay)
 router.post('/admin/categoryinsert',CategoryController.categoryinsert)
-router.get('/admin/viewcategory/:id',CategoryController.viewcategory)
-router.get('/admin/editcategory/:id',CategoryController.editcategory)
-router.post('/admin/categoryupdate/:id',CategoryController.categoryupdate)
-router.get('/admin/deletecategory/:id',CategoryController.deletecategory)
+router.get('/admin/viewcategory/:id',auth,CategoryController.viewcategory)
+router.get('/admin/editcategory/:id',auth,CategoryController.editcategory)
+router.post('/admin/categoryupdate/:id',auth,CategoryController.categoryupdate)
+router.get('/admin/deletecategory/:id',auth,CategoryController.deletecategory)
 
 //admin ContactController
-router.post('/admin/contactinsert',ContactController.contactinsert)
-router.get('/admin/contactdisplay',ContactController.contactdisplay)
-router.get('/admin/viewcontact/:id',ContactController.viewcontact)
-router.get('/admin/editcontact/:id',ContactController.editcontact)
-router.post('/admin/contactupdate/:id',ContactController.contactupdate)
-router.get('/admin/deletecontact/:id',ContactController.deletecontact)
+router.post('/admin/contactinsert',auth,ContactController.contactinsert)
+router.get('/admin/contactdisplay',auth,ContactController.contactdisplay)
+router.get('/admin/viewcontact/:id',auth,ContactController.viewcontact)
+router.get('/admin/editcontact/:id',auth,ContactController.editcontact)
+router.post('/admin/contactupdate/:id',auth,ContactController.contactupdate)
+router.get('/admin/deletecontact/:id',auth,ContactController.deletecontact)
 
 // router.get('/insertdata',BlogController.InsertData)
 
