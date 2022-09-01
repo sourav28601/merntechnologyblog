@@ -1,4 +1,16 @@
 <%- include("./header.ejs")  %>
+<style>
+    .a{
+        margin-right: 100px;
+        text-align: justify;
+    }
+    @media(max-width:768px){
+        .a{
+        margin-right: 0px;
+        text-align: justify;
+        }
+    }
+</style>
 <section class="blog-detail mtb-40">
     <div class="container">
         <div class="row">
@@ -9,10 +21,11 @@
                         <%= data.createdAt.toLocaleDateString()  %>
                     </div>
                     <div class="detail-img">
-                        <img src="/assets/images/img5.jpg" alt="blog1" />
+                        <img src="/imageupload/<%= data.image %>" class="img-fluid" alt="blog1">
+
                     </div>
-                    <div class="blog-desc">
-                        <p style="text-align:justify;margin-right: 213px;"><%= data.description %> </p>
+                    <div class="blog-desc a">
+                        <p><%= data.description %> </p>
                     </div>
                 </div>
             </div>
@@ -24,7 +37,7 @@
                            
                             <div class="rb-box">
                                 <div class="rb-box-img">
-                                    <img src="/assets/images/img1.jpg" alt="blog1" />
+                                    <img  src="/imageupload/<%= data.image %>" alt="blog1" />
                                 </div>
                                 <div class="rb-box-desc">
                                     <h4><%= data.title %></h4>
