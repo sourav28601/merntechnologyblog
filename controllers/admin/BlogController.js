@@ -56,21 +56,21 @@ class BlogController{
     static Updateblog = async(req,res) =>{
         console.log(req.params.id)
         console.log(req.body)
-        // try{
-        //     if(req.file){
-        //         var imagefile = req.file.filename
-        //     }
-        //     const result = await BlogModel.findByIdAndUpdate(req.params.id,{
-        //         title:req.body.title,
-        //         description:req.body.description,
-        //         image:imagefile
-        //     })
-        //     // console.log(result)
-        //     res.redirect('/admin/displayblog');
-        // }catch(err) 
-        // {
-        //  console.log(err)
-        // }
+        try{
+            if(req.file){
+                var imagefile = req.file.filename
+            }
+            const result = await BlogModel.findByIdAndUpdate(req.params.id,{
+                title:req.body.title,
+                description:req.body.description,
+                image:imagefile
+            })
+            // console.log(result)
+            res.redirect('/admin/displayblog');
+        }catch(err) 
+        {
+         console.log(err)
+        }
     }
     static deleteblog = async(req,res) =>{
         // console.log(req.params.id)

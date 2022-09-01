@@ -13,7 +13,6 @@
                             <li><a href="/admin/createcategory">Create Category</a></li>
                             <li><a href="/admin/categorydisplay"> Category Display</a></li>
                             <li><a href="/admin/contactdisplay">Contact</a></li>
-                            <li><a href="/about"> About</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>   
@@ -22,7 +21,7 @@
                     <div class="dash-right">
                         <div class="dash-header">
                             <div class="dash-title">
-                                <h1>Blogs</h1>
+                                <h1>Categories</h1>
                             </div>
                             <div class="dash-nav">
                                 <a href="/admin/createcategory" class="btn btn-success">Add Category</a>
@@ -30,7 +29,7 @@
                         </div>
                         <table class="table table-bordered table-striped">
                             <tr>
-                                <th>#ID</th>
+                                <th>S.NO.</th>
                                 
                               
                                 <th>Category name</th>
@@ -43,11 +42,17 @@
                                 <tr>
                                     <td><%= i++ %></td>
                                     <td><%= item.cname %></td>
+
                                     <td>
+                                        <a href="/admin/viewcategory/<%=item._id%>" class="btn btn-primary"><i class="far fa-eye"></i></a>
+                                        <a href="/admin/editcategory/<%=item._id%>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                                        <a href="/admin/deletecategory/<%=item._id%>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                    <!-- <td>
                                         <a href="/admin/viewcategory/<%=item._id%>" class="btn btn-info">VIEW</a>
                                         <a href="/admin/editcategory/<%=item._id%>"  class="btn btn-successs">EDIT</a>
                                         <a href="/admin/deletecategory/<%=item._id%>" class="btn btn-danger">DELETE</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             <% }) %>                        
                         </table>

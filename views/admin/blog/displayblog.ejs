@@ -13,7 +13,6 @@
                             <li><a href="/admin/createcategory">Create Category</a></li>
                             <li><a href="/admin/categorydisplay"> Category Display</a></li>
                             <li><a href="/admin/contactdisplay">Contact</a></li>
-                            <li><a href="/about"> About</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>   
@@ -25,12 +24,12 @@
                                 <h1 class="text-success">DISPLAY BLOGS</h1>
                             </div>
                             <div class="dash-nav">
-                                <a href="/admin/displayblog" class="btn btn-success">Add Post</a>
+                                <a href="/admin/createblog" class="btn btn-success">Add Post</a>
                             </div>
                         </div>
                         <table class="table table-bordered">
                             <tr>
-                                <th>SNo</th>
+                                <th>S.NO.</th>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Image</th>
@@ -48,10 +47,11 @@
                                      <!-- static image code -->
                                      <!-- dynamic image code -->
                                     <td><img src="/imageupload/<%= item.image %>" alt="" width="114px" height="80px" style="margin-top:20px;" ></td>
+
                                     <td>
-                                        <a href="/admin/viewblog/<%=item._id%>" class="btn btn-info">VIEW</a>
-                                        <a href="/admin/editblog/<%=item._id%>"  class="btn btn-success">EDIT</a>
-                                        <a href="/admin/deleteblog/<%=item._id%>" class="btn btn-danger">DELETE</a>
+                                        <a href="/admin/viewblog/<%=item._id%>" class="btn btn-primary"><i class="far fa-eye"></i></a>
+                                        <a href="/admin/editblog/<%=item._id%>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                                        <a href="/admin/deleteblog/<%=item._id%>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <% }) %>

@@ -13,8 +13,7 @@
                             <li><a href="/admin/createcategory">Create Category</a></li>
                             <li><a href="/admin/categorydisplay"> Category Display</a></li>
                             <li><a href="/admin/contactdisplay">Contact</a></li>
-                            <li><a href="/about"> About</a></li>
-                            <li><a href="/logout">Logout</a></li>
+                          <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>   
                 </div>
@@ -22,7 +21,7 @@
                     <div class="dash-right">
                         <div class="dash-header">
                             <div class="dash-title">
-                                <h1 class="bg-success">VIEW BLOGS</h1>
+                                <h1 class="text-success">VIEW CATEGORY</h1>
                             </div>
                             <div class="dash-nav">
                                 <a href="/admin/viewblog" class="btn btn-success">Add Post</a>
@@ -30,16 +29,16 @@
                         </div>
                         <table class="table table-bordered">
                             <tr>
-                              
-                                <th>id</th>
+                                <th>S.NO.</th>
+                                <th>#ID</th>
                                 <th>Category name</th>
-                                
-                        
                             </tr>
                             <% var i=1 %>
                             <!-- console.log(item) -->
                             <tr>
                                 <td><%= i++ %></td>
+                                <td><%= data._id %></td>
+                               
                                 <td><%= data.cname %></td>
                        
                             </tr>
