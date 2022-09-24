@@ -25,7 +25,7 @@ class UserController{
                             password:hashpassword,
                         })
                         await result.save()
-                        req.flash('success','Registration Successfully')
+                        req.flash('error','Registration Successfully')
                     return res.redirect('/login')
                     }catch(err){
                         console.log(err);

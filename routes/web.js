@@ -9,7 +9,7 @@ const CurdController = require('../controllers/CurdController')
 const ContactController = require('../controllers/admin/ContactController')
 const UserController = require('../controllers/user/UserController')
 const auth = require('../middleware/auth')
-const router = express.Router()    // METHOD CREATE 
+const router = express.Router()   // METHOD CREATE 
 
 //about middleware
 // const aboutmiddleware = require('../middleware/aboutmiddleware')
